@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+
+    $(document).ready(function(){
+
+        $("#name").blur(function(){
+            var name = $("#name").val();
+
+            if(name.length!=0)
+                $("#name").css("border","green 5px solid");
+            else
+                $("#name").css("border","red 5px solid");
+        })
+
+        $("#modal").blur(function(){
+            var modal = $("#modal").val();
+
+            if(modal.length!=0)
+                $("#modal").css("border","green 5px solid");
+            else
+                $("#modal").css("border","red 5px solid");
+        })
+
+        // var strUser = e.options[e.selectedIndex].value;
+
+        $("#age").blur(function(){
+            var age = $("#age").val();
+            
+            if(age!="no")
+            alert(age);
+            else
+            alert("bie");
+        })
+
+        $("#submit").click(function(){
+            var name = $("#name").val();
+            var modal = $("#modal").val();
+            var range = $("#range").val();
+            var age = $("#age").val();
+            var hand = $("#hand").val();
+
+            alert(name + " " + modal + " " +  age + " " +  hand);
+        })
+
+    });
+
+    </script>
+
+</head>
+<body>
+
+    <div>
+        <!-- <video loop autoplay muted plays-inline src="videos/pexels-roman-odintsov-6543340.mp4" style="margin: auto; background-attachment: fixed; background-repeat: no-repeat; position: fixed; z-index: -1; bottom: 0; top: 0; height: auto; width: 100%; background-size: cover;"></video> -->
+        <video loop autoplay muted plays-inline src="videos/video.mp4.crdownload" style="margin: auto; background-attachment: fixed; background-repeat: no-repeat; position: fixed; z-index: -1; bottom: 0; top: 0; height: auto; width: 100%; background-size: cover;"></video>
+
+    </div>
+    
+    <div class="container" style="border: 1px black; margin: auto; margin-top: 3%; padding-left: 10%; padding-right: 10%; padding-top: 2%; background-color: rgba(81, 107, 81, 0.715);">
+    
+        <form action="">
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <center><span style="padding: 1%; font-size: 35px; font-weight: 800; color: white; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        PROJECT-1
+                    </span></center>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3" style="border: 1px rgb(29, 169, 129);">
+
+                    <!-- /////////// NAME /////////// -->
+                    <div class="form-floating mb-3">
+                        <input type="name" class="form-control" id="name" placeholder="Name">
+                        <label for="name">Name</label>
+                    </div>
+
+                    <!-- //////// CAR MODEL   /////////////// -->
+                    <div class="form-floating mb-3">
+                        <input type="name" class="form-control" id="modal" placeholder="Car Model">
+                        <label for="modal">Car Model</label>
+                    </div>
+                    
+                    <!-- ////////RANGE /////////// -->
+                    <div class="form-floating">
+                        <input type="range" class="form-control form-range" min="0" max="5" step="0.5" id="range" placeholder="range" style="height: 100px">
+                        <label for="range" style="color: white; font-size: 20px; font-weight: 20%;"> Price range </label> <br>
+                    </div>
+
+                </div>
+                
+                <div class="col-md-6" style="border: 1px rgb(188, 42, 42);">
+
+                    <!-- /////////////////   AGE GROUP   ////////////////// -->
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="age">
+                          <option selected value="no">Open this select menu</option>
+                          <option value="18-30">18-30</option>
+                          <option value="31-40">31-40</option>
+                          <option value="41-50">41-50</option>
+                          <option value="51-60">51-60</option>
+                          <option value="61-70">61-70</option>
+                          <option value="">71-80</option>
+                        </select>
+                        <label for="age">Select Age Group</label>
+                    </div>
+
+                    <!-- ////////////////  FIRST MODEL ---- SECOND MODEL   //////////////// -->
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="hand">
+                          <option selected>Open this select menu</option>
+                          <option value="1">First hand</option>
+                          <option value="2">Second hand</option>
+                        </select>
+                        <label for="hand">First-hand or Second-hand</label>
+                    </div>
+                    
+                    <!-- /////////////// COMMENTS  ////////// -->
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Comments</label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3 offset-md-3">
+                    <center>
+
+                        <input type="button" value="SUBMIT" class="btn btn-success" id="submit" style="margin: 15px;" onclick="doSubmit();">
+                        <input type="reset" value="RESET" class="btn btn-success" style="margin: 15px;">
+
+                    </center>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
